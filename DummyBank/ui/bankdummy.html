@@ -3,43 +3,54 @@
  <head>
  	<title>Dummy Bank</title>
     <!-- Bootstrap -->
-    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <script type="text/javascript" src="bootstrap-3.3.7-dist/js/headermenu.js"></script>
-      
-     <style>
-		.center {
-    		text-align: center;
-		}
-	</style>
- </head>
-
- 	<meta charset="utf-8">
-    <!-- Message Header -->	
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/lib/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/headermenu.js"></script>
     
-	<nav class="navbar navbar-info navbar-fixed-top">
+    
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link herf="bootstrap-3.3.7-dist/css/headermenu.css" rel="stylesheet">
+    
+      
+      
+     
+
+   
+ </head>
+ 
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp">
+
+<!-- NAVIGATION -->
+
+<nav class="navbar navbar-info navbar-fixed-top">
 		<div class="bg-primary">
   			<div class="container-fluid">
     			<div class="navbar-header">
-    				<div style="text-align: center">
+    				<div class="text-center">
       					<h2>Bank Dummy Web Service Test</h2>
     				</div>
     			</div>
     		</div>
-    		<!-- Menu -->
-    		<ul class="nav navbar-nav">		
-      			<li><a href="sendDrawdownTrans.html">sendDrawdownTrans Test</a></li>
-     		 	<li><a href="#">sendDebitTrans Test</a></li>
-      			<li><a href="#">inqCreditLimit Test</a></li>
-    		</ul>
-  		</div>
-	</nav>
-	  <div class="tab-content">
-    <div id="sendDrawdownTrans.html" class="tab-pane fade in active">
-          </div>
+    		
+    		
+    <!-- Menu -->
     
-		
- </body>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="sendDrawdownTrans">sendDrawdownTrans Test</a></li>
+        <li><a ui-sref="about">sendDebitTrans Test</a></li>
+        <li><a ui-sref="about">inqCreditLimit Test</a></li>
+    </ul>
+</nav>
 
+<!-- MAIN CONTENT -->
+<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+
+
+</body>
 </html>

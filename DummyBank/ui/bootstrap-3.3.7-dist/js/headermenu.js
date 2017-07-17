@@ -1,21 +1,30 @@
-var app = angular.module("myApp", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "main.htm"
-    })
-    .when("/red", {
-        templateUrl : "red.htm"
-    })
-    .when("/green", {
-        templateUrl : "green.htm"
-    })
-    .when("/blue", {
-        templateUrl : "blue.htm"
-    })
-})
+var routerApp = angular.module('routerApp', [ 'ui.router' ]);
 
-var center {
-    text-align: center;
-   
-}
+routerApp.config(function($stateProvider, $urlRouterProvider) {
+
+	$urlRouterProvider.otherwise('/sendDrawdownTrans');
+
+	$stateProvider
+
+	// HOME STATES AND NESTED VIEWS ========================================
+	.state('sendDrawdownTrans', {
+		url : '/sendDrawdownTrans',
+		templateUrl : '/ng-template/sendDrawdownTrans.html'
+	})
+
+	//        
+	// // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+	// .state('about', {
+	// url: '/about',
+	// views: {
+	// '': { templateUrl: 'partial-about.html' },
+	// 'columnOne@about': { template: 'Look I am a column!' },
+	// 'columnTwo@about': {
+	// templateUrl: 'table-data.html',
+	// controller: 'scotchController'
+	// }
+	// }
+	//            
+	// });
+
+});
