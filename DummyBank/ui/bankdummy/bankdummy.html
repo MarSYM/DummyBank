@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+ <head>
+ 	<title>Dummy Bank</title>
+    <!-- Bootstrap -->
+    <script th:src="@{/js/lib/angular.min.js}" src="../bootstrap-3.3.7-dist/js/lib/angular.min.js"></script>
+    <script th:src="@{/js/lib/angular-ui-router.min.js}" src="../bootstrap-3.3.7-dist/js/lib/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="headermenu.js"></script>
+    
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    
+ </head>
+ 
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp">
+
+<!-- NAVIGATION -->
+
+<nav class="navbar navbar-info navbar-fixed-top">
+		<div class="bg-primary">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+    				<div class="text-center">
+      					<h2>Bank Dummy Web Service Test</h2>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		
+    <!-- Menu -->
+    
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="/sendDrawdownTrans">sendDrawdownTrans Test</a></li>
+        <li><a ui-sref="about">sendDebitTrans Test</a></li>
+        <li><a ui-sref="about">inqCreditLimit Test</a></li>
+    </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+
+	<div class="row" class="container">
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+		<div  ui-view class="col-md-12"></div>
+	</div>
+
+
+
+
+</body>
+</html>
